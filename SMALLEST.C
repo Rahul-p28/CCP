@@ -1,16 +1,28 @@
 #include<stdio.h>
 #include<conio.h>
-void main()
+int main()
 {
-  int a,b,c;
+  int n,arr[30],i,smallest,position;
   clrscr();
-  printf("\n enter the three numbers:");
-  scanf("%d %d %d",&a,&b,&c);
-  if(a<b&&a<c)
-  printf("\n smallest number is %d",a);
-  else if(b<a&&b<c)
-  printf("\n smallest numberis %d",b);
-  else
-  printf("\n smallest number is %d",c);
-  getch();
+  printf("\n enter the number of elements:");
+  scanf("%d",&n);
+  for(i=0;i<n;i++)
+  {
+   printf("\n arr[%d]=",i);
+   scanf("%d",&arr[i]);
+   }
+   smallest=arr[0];
+   position=0;
+   for(i=1;i<n;i++)
+   {
+    if(arr[i]<smallest)
+    {
+    smallest=arr[i];
+    position=i;
+    }
+    }
+    printf("\n the smallest element in the array is :%d",smallest);
+    printf("\n the position of the smallest element the arrayis %d ",position);
+    getch();
+    return(0);
 }
